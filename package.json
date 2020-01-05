@@ -42,7 +42,8 @@
     "fastify-plugin": "^1.6.0",
     "pino": "^5.15.0",
     "pino-pretty": "^3.5.0",
-    "ramda": "^0.26.1"
+    "ramda": "^0.26.1",
+    "readdir-enhanced": "^5.1.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.7.7",
