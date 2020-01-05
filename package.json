@@ -1,0 +1,44 @@
+{
+  "name": "node-start-project",
+  "version": "0.1.0",
+  "description": "A Node Boilerplate for start projects.",
+  "main": "dist/index.js",
+  "license": "MIT",
+  "author": {
+    "name": "Marcelo H M Dias",
+    "url": "https://github.com/marcelohmdias",
+    "email": "marcelohmdias@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marcelohmdias/node-start-project.git"
+  },
+  "bugs": {
+    "url": "https://github.com/marcelohmdias/node-start-project/issues"
+  },
+  "homepage": "https://github.com/marcelohmdias/node-start-project#readme",
+  "keywords": [
+    "Awilix",
+    "Fastify",
+    "PM2",
+    "Typescript"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^8.3.4",
+    "@commitlint/config-conventional": "^8.3.4",
+    "@commitlint/core": "^8.3.4",
+    "commitizen": "^4.0.3",
+    "commitlint-config-gitmoji": "https://github.com/arvinxx/commitlint-config-gitmoji.git",
+    "cz-emoji": "1.1.2",
+    "husky": "^4.0.0-beta.5",
+    "lint-staged": "^9.5.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-emoji"
+    }
+  }
+}
