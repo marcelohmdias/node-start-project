@@ -1,0 +1,16 @@
+{
+  "delay": "500",
+  "env": {
+    "NODE_ENV": "development"
+  },
+  "execMap": {
+    "ts": "node --inspect -r module-alias/register -r sucrase/register src/index.ts"
+  },
+  "ignore": ["./node_modules/*"],
+  "options": {
+    "extensions": ["ts", "json"]
+  },
+  "restartable": "rs",
+  "verbose": false,
+  "watch": ["src/"]
+}
