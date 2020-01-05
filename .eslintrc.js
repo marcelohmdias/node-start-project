@@ -22,11 +22,28 @@ module.exports = {
     ecmaVersion: 2018,
     sourceType: 'module'
   },
-  plugins: ['@typescript-eslint', 'prettier'],
+  plugins: ['eslint-plugin-import-helpers', '@typescript-eslint', 'prettier'],
   rules: {
     'prettier/prettier': 'error',
     'no-console': isProd ? 'error' : 'off',
     'no-debugger': isProd ? 'error' : 'off',
-    '@typescript-eslint/member-delimiter-style': 'off'
+    '@typescript-eslint/member-delimiter-style': 'off',
+    'import-helpers/order-imports': [
+      'warn',
+      {
+        alphabetize: { order: 'asc', ignoreCase: true },
+        groups: [
+          'module',
+          '/^@//',
+          '/^@server/',
+          '/^@libs/',
+          '/^@domains/',
+          '/^@helpers/',
+          '/^@interfaces/',
+          [('parent', 'sibling', 'index')]
+        ],
+        newlinesBetween: 'always'
+      }
+    ]
   }
 }
