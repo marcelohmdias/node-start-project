@@ -1,0 +1,47 @@
+{
+  "compilerOptions": {
+    /* Basic Options */
+    "allowJs": true,
+    "checkJs": true,
+    "lib": ["ESNext"],
+    "noEmit": true,
+    "module": "CommonJS",
+    "outDir": "dist",
+    "removeComments": true,
+    "sourceMap": true,
+    "target": "ESNext",
+
+    /* Strict Type-Checking Options */
+    "alwaysStrict": true,
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "noImplicitReturns": true,
+    "strictNullChecks": true,
+    "strictBindCallApply": true,
+    "strictFunctionTypes": true,
+    "strictPropertyInitialization": true,
+    "strict": true,
+
+    /* Module Resolution Options */
+    "baseUrl": "./",
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "paths": {
+      "@/*": ["./src/*"],
+      "@interfaces/*": ["src/interfaces/*"],
+      "@libs/*": ["src/libs/*"],
+      "@domains/*": ["./src/domains/*"],
+      "@server/*": ["./src/server/*"],
+      "@helpers/*": ["./src/helpers/*"]
+    },
+
+    /* Experimental Options */
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+
+    /* Advanced Options */
+    "forceConsistentCasingInFileNames": true /* Disallow inconsistently-cased references to the same file. */
+  },
+  "exclude": ["./node_modules/**/*"],
+  "include": ["./src/**/*.ts"]
+}

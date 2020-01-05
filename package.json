@@ -24,21 +24,48 @@
     "Typescript"
   ],
   "scripts": {
+    "lint": "eslint -c .eslintrc.js --ext .ts,.js .",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "cross-env": "^6.0.3"
   },
   "devDependencies": {
     "@commitlint/cli": "^8.3.4",
     "@commitlint/config-conventional": "^8.3.4",
     "@commitlint/core": "^8.3.4",
+    "@typescript-eslint/eslint-plugin": "^2.14.0",
+    "@typescript-eslint/parser": "^2.14.0",
     "commitizen": "^4.0.3",
     "commitlint-config-gitmoji": "https://github.com/arvinxx/commitlint-config-gitmoji.git",
     "cz-emoji": "1.1.2",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.9.0",
+    "eslint-config-standard": "^14.1.0",
+    "eslint-plugin-import": "^2.19.1",
+    "eslint-plugin-node": "^11.0.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
     "husky": "^4.0.0-beta.5",
-    "lint-staged": "^9.5.0"
+    "lint-staged": "^9.5.0",
+    "module-alias": "^2.2.2",
+    "nodemon": "^2.0.2",
+    "prettier": "^1.19.1",
+    "sucrase": "^3.12.0",
+    "typescript": "^3.7.4"
   },
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-emoji"
     }
+  },
+  "_moduleAliases": {
+    "@": "./src",
+    "@interfaces": "./src/interfaces",
+    "@libs": "./src/libs",
+    "@domains": "./src/domains",
+    "@server": "./src/server",
+    "@helpers": "./src/helpers"
   }
 }
