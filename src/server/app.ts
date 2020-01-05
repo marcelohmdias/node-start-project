@@ -1,12 +1,13 @@
-import config from 'config'
 import { asFunction, asValue, AwilixContainer } from 'awilix'
+import config from 'config'
 import { FastifyInstance } from 'fastify'
 import { IncomingMessage, Server, ServerResponse } from 'http'
 
+import { makeConatiner, registerResolvers } from '@/libs/container'
+import { makeLogger } from '@/libs/logger'
+
 import { getConfig } from '@helpers/getConfig'
 
-import { makeLogger } from '@/libs/logger'
-import { makeConatiner, registerResolvers } from '@/libs/container'
 import { initApp } from './core/bootstrap'
 import { makeServer } from './core/server'
 

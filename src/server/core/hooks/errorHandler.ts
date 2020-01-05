@@ -1,5 +1,6 @@
-import fp from 'fastify-plugin'
 import { FastifyInstance } from 'fastify'
+import fp from 'fastify-plugin'
+
 import { AppContainer } from '@/interfaces/ApplicationContainer'
 
 /* eslint @typescript-eslint/no-var-requires: "off" */

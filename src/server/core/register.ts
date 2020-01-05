@@ -1,6 +1,6 @@
+import { FastifyInstance } from 'fastify'
 import autoload from 'fastify-autoload'
 import { join } from 'path'
-import { FastifyInstance } from 'fastify'
 
 export const registerModules = (server: FastifyInstance, folders: string[]): void => {
   folders.forEach((folder) => {

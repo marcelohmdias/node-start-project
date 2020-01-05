@@ -1,6 +1,6 @@
-import { AppContainer } from '@interfaces/ApplicationContainer'
-
 import { getConfig } from '@helpers/getConfig'
+
+import { AppContainer } from '@interfaces/ApplicationContainer'
 
 export const initApp = async ({ app, config, logger }: AppContainer): Promise<void> => {
   try {

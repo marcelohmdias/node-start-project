@@ -1,5 +1,5 @@
-import { props } from 'ramda'
 import { IConfig } from 'config'
+import { props } from 'ramda'
 
 type Config = {
   [key: string]: string

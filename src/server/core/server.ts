@@ -1,5 +1,5 @@
-import fastify, { FastifyInstance, ServerOptions } from 'fastify'
 import { asValue, AwilixContainer } from 'awilix'
+import fastify, { FastifyInstance, ServerOptions } from 'fastify'
 
 import { registerModules } from './register'
 

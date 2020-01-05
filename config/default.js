@@ -1,8 +1,7 @@
 /* eslint @typescript-eslint/no-var-requires: "off" */
 
-const { resolve } = require('path')
-
 const defer = require('config/defer').deferConfig
+const { resolve } = require('path')
 
 const path = resolve(__dirname, '..', `.env.${process.env.NODE_ENV}`)
 
