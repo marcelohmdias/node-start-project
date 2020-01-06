@@ -1,0 +1,11 @@
+type Profile {
+  id: ID!
+  description: String
+  role: String!
+  users: [User]
+}
+
+input ProfileInput {
+  description: String
+  role: String!
+}

@@ -1,0 +1,7 @@
+type Query {
+  profiles: [Profile]
+  profile(id: ID!): Profile!
+
+  users: [User]
+  user(id: ID!): User!
+}

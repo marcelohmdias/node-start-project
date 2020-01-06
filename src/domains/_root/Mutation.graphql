@@ -1,0 +1,4 @@
+type Mutation {
+  newProfile(payload: ProfileInput!): Profile!
+  newUser(payload: UserInput!): User!
+}
