@@ -19,17 +19,13 @@ type Application = {
 export const createApp = async (): Promise<Application> => {
   const [level, name] = getConfig(config, 'LEVEL_LOG', 'APP_NAME')
 
-  const container = makeConatiner()
-
   const logger = makeLogger({ level, name })
 
-  const server = makeServer({ logger }, container)
-
-  registerResolvers(container, {
+  const container = registerResolvers(makeConatiner(), {
     bootstrap: asFunction(initApp),
     config: asValue(config),
     logger: asValue(logger)
   })
 
-  return { container, server }
+  return makeServer({ logger }, container)
 }

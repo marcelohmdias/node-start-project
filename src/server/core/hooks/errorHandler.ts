@@ -29,6 +29,4 @@ const serverErrorHandler = (app: FastifyInstance, opts: unknown, next: Function)
   next()
 }
 
-export default fp(serverErrorHandler, {
-  name: 'custom-error-page'
-})
+export default fp(serverErrorHandler, { name: 'custom-error' })

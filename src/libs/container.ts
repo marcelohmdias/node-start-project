@@ -10,8 +10,8 @@ export const makeConatiner = (): AwilixContainer => {
   return createContainer({ injectionMode })
 }
 
-export const registerResolvers = (container: AwilixContainer, modules: Modules): void => {
-  Object.keys(modules).forEach((name) => {
-    container.register(name, modules[name])
-  })
+export const registerResolvers = (container: AwilixContainer, modules: Modules): AwilixContainer => {
+  return Object.keys(modules).reduce((container, name) => {
+    return container.register(name, modules[name])
+  }, container)
 }

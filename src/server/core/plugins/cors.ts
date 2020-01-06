@@ -8,6 +8,4 @@ const fastifyCors = (app: FastifyInstance, opts: unknown, next: Function): void 
   next()
 }
 
-export default fp(fastifyCors, {
-  name: 'cors'
-})
+export default fp(fastifyCors, { name: 'cors' })

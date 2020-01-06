@@ -2,16 +2,16 @@ import { FastifyInstance } from 'fastify'
 import autoload from 'fastify-autoload'
 import { join } from 'path'
 
-export const registerModules = (server: FastifyInstance, folders: string[]): void => {
+export const registerModules = (app: FastifyInstance, folders: string[]): void => {
   folders.forEach((folder) => {
     const config = {
       dir: join(__dirname, folder),
       includeTypeScript: true
     }
 
-    server.register(autoload, config).after((err: Error) => {
-      if (err) return server.log.error(err)
-      server.log.debug(`Server ${folder} registered.`)
+    app.register(autoload, config).after((err: Error) => {
+      if (err) return app.log.error(err)
+      app.log.debug(`Server ${folder} registered.`)
     })
   })
 }

@@ -8,6 +8,4 @@ const fastifyHelmet = (app: FastifyInstance, opts: unknown, next: Function): voi
   next()
 }
 
-export default fp(fastifyHelmet, {
-  name: 'helmet'
-})
+export default fp(fastifyHelmet, { name: 'helmet' })

@@ -7,7 +7,7 @@ interface AppBootstrap {
 export const createApplication = async (): Promise<AppBootstrap> => {
   const app = await createApp()
 
-  return Promise.resolve({
+  return {
     bootstrap: (): void => app.container.resolve('bootstrap')
-  })
+  }
 }

@@ -3,7 +3,12 @@ import fastify, { FastifyInstance, ServerOptions } from 'fastify'
 
 import { registerModules } from './register'
 
-export const makeServer = (opts: ServerOptions, container: AwilixContainer): FastifyInstance => {
+interface ServerResult {
+  container: AwilixContainer
+  server: FastifyInstance
+}
+
+export const makeServer = (opts: ServerOptions, container: AwilixContainer): ServerResult => {
   const server = fastify({ ...opts })
 
   // Applying redundant access
@@ -13,5 +18,5 @@ export const makeServer = (opts: ServerOptions, container: AwilixContainer): Fas
   // Register all modules with plugins
   registerModules(server, ['hooks', 'plugins'])
 
-  return server
+  return { container, server }
 }

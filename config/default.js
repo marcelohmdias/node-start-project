@@ -9,6 +9,7 @@ require('dotenv').config({ path })
 
 module.exports = {
   APP_NAME: process.env.APP_NAME,
+  EXT: defer(() => (process.env.NODE_ENV === 'development' ? 'ts' : 'js')),
   HOST: process.env.HOST,
   IS_DEV: defer(() => process.env.NODE_ENV === 'development'),
   IS_PROD: defer(() => process.env.NODE_ENV === 'production'),
