@@ -1,18 +1,20 @@
-import { buildSchema, GraphQLSchema } from 'graphql'
-import { IResolvers } from 'graphql-tools'
+import { GraphQLSchema } from 'graphql'
+import { IResolvers, ITypeDefinitions, makeExecutableSchema } from 'graphql-tools'
 import { join } from 'path'
 
 import { loadContext, loadSchemas } from '@helpers/loadFiles'
 
-const path = join(__dirname, '..', 'domains')
-
-export const getSchemas = async (): Promise<GraphQLSchema> => {
-  const gql = await loadSchemas(path, '**/*.graphql')
-
-  return buildSchema(`${gql}`)
+interface SchemaOpts {
+  ext: string
 }
 
-export const getResolvers = async (ext: string): Promise<IResolvers> => {
+const path = join(__dirname, '..', 'domains')
+
+const getSchemas = async (): Promise<ITypeDefinitions> => {
+  return loadSchemas(path, '**/*.graphql')
+}
+
+const getResolvers = async (ext: string): Promise<IResolvers> => {
   const [mutations, queries, resolvers] = await Promise.all([
     loadContext(path, `**/*.mutations.${ext}`),
     loadContext(path, `**/*.queries.${ext}`),
@@ -20,4 +22,10 @@ export const getResolvers = async (ext: string): Promise<IResolvers> => {
   ])
 
   return { ...mutations, ...queries, ...resolvers }
+}
+
+export const makeSchema = async ({ ext }: SchemaOpts): Promise<GraphQLSchema> => {
+  const [typeDefs, resolvers] = await Promise.all([getSchemas(), getResolvers(ext)])
+
+  return makeExecutableSchema({ typeDefs, resolvers })
 }
