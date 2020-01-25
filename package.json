@@ -64,7 +64,7 @@
     "@types/config": "^0.0.36",
     "@types/node": "^13.1.8",
     "@types/pino": "^5.15.3",
-    "@types/ramda": "^0.26.39",
+    "@types/ramda": "^0.26.40",
     "@typescript-eslint/eslint-plugin": "^2.17.0",
     "@typescript-eslint/parser": "^2.17.0",
     "babel-plugin-module-resolver": "^4.0.0",
