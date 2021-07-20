@@ -48,7 +48,7 @@
     "objection": "^2.1.2",
     "pg": "^7.18.1",
     "pino": "^5.16.0",
-    "pino-pretty": "^3.5.0",
+    "pino-pretty": "^5.1.2",
     "plur": "^3.1.1",
     "ramda": "^0.26.1",
     "readdir-enhanced": "^5.1.1"
